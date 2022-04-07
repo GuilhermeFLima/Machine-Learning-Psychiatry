@@ -22,7 +22,7 @@
 20,fleurs
 21,fleurs_de_mal
 22,pourriture
-23,pourri_
+23,pourri
 24,biologique
 25,végétal
 26,lagune
@@ -37,14 +37,14 @@
 35,signal
 36,alarme
 37,sos
-38,HELLP_syndrome
+38,hellp_syndrome
 39,moi-même
 40,mes_amis
 41,mes_amours
 42,mes_emmerdes
 43,télévision
 44,radio
-45,radio.1
+45,radio
 46,encore_une_fois
 47,voix
 48,émission
@@ -60,7 +60,7 @@
 58,engagement
 59,élection
 60,voler
-61,vol_
+61,vol
 62,oiseau
 63,nain
 64,poussin
@@ -70,8 +70,8 @@
 68,peinture
 69,couette
 70,silence
-71,calme.1
-72,volupté.1
+71,calme
+72,volupté
 73,soldat
 74,soldat_plomb
 75,mort

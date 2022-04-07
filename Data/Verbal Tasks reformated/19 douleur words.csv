@@ -8,8 +8,8 @@
 6,réveiller
 7,se_réveiller
 8,se_rendormir
-9,réveiller.1
-10,se_rendormir.1
+9,réveiller
+10,se_rendormir
 11,manger
 12,boire
 13,s'habiller
@@ -19,7 +19,7 @@
 17,ne_rien_montrer
 18,montrer
 19,ne_pas_montrer
-20,cacher.1
+20,cacher
 21,masque
 22,tout_le_monde_a_un_masque_même_moi
 23,quelle_galère
@@ -30,6 +30,6 @@
 28,comprimé
 29,con_primé
 30,con_qui_est_primé
-31,jean-Marc
+31,jean-marc
 32,mon_frère
-33,con_primé.1
+33,con_primé

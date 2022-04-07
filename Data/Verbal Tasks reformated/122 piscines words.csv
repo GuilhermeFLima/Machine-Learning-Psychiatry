@@ -5,7 +5,7 @@
 3,ami
 4,lunettes
 5,profondeur
-6,bien-être.1
+6,bien-être
 7,eau
 8,température
 9,chaud
@@ -21,10 +21,10 @@
 19,respiration
 20,crawl
 21,bonnet
-22,lunettes.1
+22,lunettes
 23,maillot_de_bain
 24,crème_solaire
-25,eau.1
+25,eau
 26,piscine
 27,maître-nageur
 28,sifflet
@@ -41,7 +41,7 @@
 39,sous-marin
 40,sous-marine
 41,bouteille
-42,respiration.1
+42,respiration
 43,oxygène
 44,océan
 45,descendre

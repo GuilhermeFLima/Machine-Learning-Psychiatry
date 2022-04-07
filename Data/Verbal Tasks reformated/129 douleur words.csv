@@ -1,7 +1,7 @@
 ,0
 0,douleur
 1,douloureux
-2,douloureux.1
+2,douloureux
 3,heureux
 4,heureuse
 5,pétillement
@@ -14,13 +14,13 @@
 12,tristesse
 13,pleurs
 14,amour
-15,amour.1
+15,amour
 16,amitié
 17,amitié_avec_des_filles
 18,avec_des_garçons
 19,amour_avec_des_filles
-20,avec_des_garçons.1
-21,pleurs.1
+20,avec_des_garçons
+21,pleurs
 22,enfance
 23,mère
 24,grand-mère
@@ -43,8 +43,8 @@
 41,justement
 42,justification
 43,facilité
-44,facilité.1
-45,douleur.1
-46,douleur.2
+44,facilité
+45,douleur
+46,douleur
 47,douleur_au_pied
 48,marcher

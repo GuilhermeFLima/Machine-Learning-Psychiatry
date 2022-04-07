@@ -21,7 +21,7 @@
 19,médecin
 20,guerre_de_malade
 21,lit_d'hôpital
-22,pansement.1
+22,pansement
 23,repas_d'hôpital
 24,caractère_non_bon
 25,stérilisation
@@ -38,9 +38,9 @@
 36,désinfectant
 37,douche
 38,robinet
-39,plateau__amovible
+39,plateau_amovible
 40,vaisselle
-41,douleur.1
+41,douleur
 42,séquelle
 43,souvenir
 44,convalescence
@@ -51,6 +51,6 @@
 49,visibilité
 50,trace
 51,rhumatologie
-52,douleur.2
+52,douleur
 53,antalgique
-54,durée_un_arrêt_de__travail
+54,durée_un_arrêt_de_travail

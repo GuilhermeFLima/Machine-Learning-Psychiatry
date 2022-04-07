@@ -9,7 +9,7 @@
 7,canard
 8,oie
 9,poulain
-10,jument_
+10,jument
 11,taureau
 12,agneau
 13,mouton
@@ -33,7 +33,7 @@
 31,orque
 32,otarie
 33,hyène
-34,ranard_
+34,ranard
 35,loup
 36,cochon
 37,cochon_d'inde
@@ -51,5 +51,5 @@
 49,corneille
 50,geai
 51,corbeau
-52,crapaud_
+52,crapaud
 53,crapaud_bufle

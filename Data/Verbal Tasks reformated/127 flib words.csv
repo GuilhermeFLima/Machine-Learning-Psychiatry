@@ -25,7 +25,7 @@
 23,hall_d'entrée
 24,lit
 25,table_de_chevet
-26,lampe.1
+26,lampe
 27,radio-réveil
 28,oreiller
 29,couverture
@@ -52,9 +52,9 @@
 50,tire-bouchon
 51,ouvre-boîte
 52,vaissellier
-53,assiette.1
+53,assiette
 54,bol
-55,verre.1
+55,verre
 56,riz
 57,courgette
 58,tomate
@@ -79,5 +79,5 @@
 77,tringle
 78,miroir
 79,serviette
-80,W-C
+80,w-c
 81,magasine

@@ -1,12 +1,12 @@
 ,0
-0,Sparadrap
+0,sparadrap
 1,sang
 2,hôpital
 3,chirurgie
 4,cancérologie
 5,aiguille
 6,bloc_opératoire
-7,hôpital.1
+7,hôpital
 8,blanc
 9,blouse
 10,médecin
@@ -45,7 +45,7 @@
 43,réadaptation
 44,rééducation
 45,course
-46,guérison.1
+46,guérison
 47,oubli
 48,rechute
 49,stade_quatre

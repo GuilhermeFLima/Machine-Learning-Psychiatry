@@ -1,6 +1,6 @@
 ,0
 0,début
-1,début.1
+1,début
 2,ligne
 3,phrase
 4,premier_mot_d'une_phrase
@@ -14,11 +14,11 @@
 12,faite_par_quelqu'un
 13,drapeau
 14,début_d'une_course
-15,début.2
+15,début
 16,le_décompte_un_deux_trois
-17,début.3
-18,le_décompte_un_deux_trois.1
-19,début.4
+17,début
+18,le_décompte_un_deux_trois
+19,début
 20,écluse
 21,numéro_un
 22,nombre_un

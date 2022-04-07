@@ -13,7 +13,7 @@
 11,région
 12,pays
 13,continent
-14,terre_
+14,terre
 15,mer
 16,océan
 17,espace
@@ -26,10 +26,10 @@
 24,besoin
 25,équilibre
 26,religion
-27,équilibre.1
+27,équilibre
 28,fils_de_dieu
 29,senior
-30,besoin.1
+30,besoin
 31,sport
 32,chevalier
 33,joute
@@ -37,7 +37,7 @@
 35,pierre
 36,donjon
 37,chasteté
-38,besoin.2
+38,besoin
 39,envie
 40,route
 41,paysan

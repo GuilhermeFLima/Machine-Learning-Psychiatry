@@ -1,6 +1,6 @@
 ,0
-0,Adam
-1,Eve
+0,adam
+1,eve
 2,pêché
 3,sept
 4,capital
@@ -34,7 +34,7 @@
 32,pause
 33,cigarette
 34,mégot
-35,tabac.1
+35,tabac
 36,saleté
 37,propreté
 38,lit
@@ -47,12 +47,12 @@
 45,vert
 46,personnel
 47,hospitalier
-48,vert.1
-49,bleu.1
+48,vert
+49,bleu
 50,rouge
 51,ambulance
 52,clavier
-53,bouton.1
+53,bouton
 54,souris
 55,mulot
 56,wifi

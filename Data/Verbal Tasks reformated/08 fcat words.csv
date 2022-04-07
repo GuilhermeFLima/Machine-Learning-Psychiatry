@@ -1,5 +1,5 @@
 ,0
-0,serpent_
+0,serpent
 1,éléphant
 2,vipère
 3,cobra
@@ -8,7 +8,7 @@
 6,coq
 7,poule
 8,vermisseau
-9,vermisseau.1
+9,vermisseau
 10,ver-de-terre
 11,oiseau
 12,albatros
@@ -20,12 +20,12 @@
 18,puce
 19,lièvre
 20,lapin
-21,oiseau.1
+21,oiseau
 22,mammifère
 23,dinosaure
 24,diplodocus
 25,chats
-26,chats.1
+26,chats
 27,chiens
 28,dog
 29,caniche
@@ -36,7 +36,7 @@
 34,âne
 35,mulet
 36,mule
-37,animaux__domestiques
+37,animaux_domestiques
 38,animaux_de_transport
 39,condor
 40,vautour

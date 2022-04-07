@@ -13,10 +13,10 @@
 11,feuille
 12,tilleul
 13,verveine
-14,chapeau__de_paille
+14,chapeau_de_paille
 15,pallaisson
 16,somnambule
-17,somnambule.1
+17,somnambule
 18,maîtresse
 19,professeur
 20,histoire
@@ -26,13 +26,13 @@
 24,philisophie
 25,nietzsche
 26,descartes
-27,descartes.1
+27,descartes
 28,lumière
-29,louis_XIV
+29,louis_xiv
 30,marie-antoinette
 31,château
 32,versaille
-33,arbre.1
+33,arbre
 34,parc
 35,jardin
 36,français
@@ -63,8 +63,8 @@
 61,drosophile
 62,alligator
 63,animal
-64,éléphant_
-65,alligator.1
+64,éléphant
+65,alligator
 66,cuir
 67,peau
 68,charpente
@@ -74,7 +74,7 @@
 72,scie_circulaire
 73,toupie
 74,défonceuse
-75,tour__à__bois
+75,tour_à_bois
 76,paille
 77,agriculture
 78,fermier
@@ -83,7 +83,7 @@
 81,éolienne
 82,centrale_nucléaire
 83,uranium
-84,uranium.1
+84,uranium
 85,conard
 86,salope
 87,enfoiré
@@ -92,7 +92,7 @@
 90,père
 91,famille
 92,travail
-93,famille.1
+93,famille
 94,patrie
 95,guerre
 96,quatorze-dix-huit

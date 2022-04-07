@@ -2,7 +2,7 @@
 0,serpent
 1,douleur
 2,morsure
-3,vert_
+3,vert
 4,brun
 5,écaille
 6,crocs
@@ -21,7 +21,7 @@
 19,joueur_de_flûte
 20,animal_maltraité
 21,sac
-22,Hermès
+22,hermès
 23,chaussures
 24,veste
 25,détournement_de_l'objet
@@ -38,15 +38,15 @@
 36,glisser_sur_le_sol
 37,ramper
 38,déplacer
-39,désert.1
+39,désert
 40,sable
 41,traces_dans_le_sable
 42,tête
 43,vipère
-44,V_sur_la_tête_de_la_vipère
-45,Sud
-46,Sud_de_la_France
-47,Herbes_hautes
+44,v_sur_la_tête_de_la_vipère
+45,sud
+46,sud_de_la_france
+47,herbes_hautes
 48,sandale
 49,pieds_dans_l'herbe
 50,serpent_qui_arrive
@@ -55,7 +55,7 @@
 53,attention
 54,garder_l'œil
 55,difficile
-56,douleur.1
+56,douleur
 57,vaccin
 58,prévoir
 59,guérir

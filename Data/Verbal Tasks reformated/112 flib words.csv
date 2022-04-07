@@ -5,7 +5,7 @@
 3,fa
 4,sol
 5,la
-6,do.1
+6,do
 7,chat
 8,maison
 9,liberté
@@ -25,7 +25,7 @@
 23,olive
 24,huile
 25,bière
-26,eau_
+26,eau
 27,frigo
 28,freezer
 29,congélateur
@@ -45,7 +45,7 @@
 43,cabinet
 44,papier
 45,robinet
-46,eau_.1
+46,eau
 47,tuile
 48,toit
 49,cheminée
@@ -74,13 +74,13 @@
 72,vacances
 73,hiver
 74,ski
-75,___________toussaint
+75,toussaint
 76,mort
-77,ciel.1
-78,nuage.1
+77,ciel
+78,nuage
 79,soleil
-80,lune.1
-81,papier.1
+80,lune
+81,papier
 82,ciseaux
 83,genou
 84,caillou
@@ -114,7 +114,7 @@
 112,fleur
 113,papillon
 114,oiseau
-115,pie_
+115,pie
 116,pipi
 117,lit
 118,dormir

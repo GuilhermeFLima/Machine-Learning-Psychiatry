@@ -1,5 +1,5 @@
 ,0
-0,Piscine
+0,piscine
 1,natation
 2,eau
 3,piscine
@@ -8,7 +8,7 @@
 6,sport
 7,maillot_de_bain
 8,plage
-9,jeu.1
+9,jeu
 10,détente
 11,agréable
 12,profondeur
@@ -16,14 +16,14 @@
 14,parent
 15,ami
 16,convivialité
-17,sport.1
+17,sport
 18,muscle
 19,détente_musculaire
 20,activité
 21,forme
 22,santé
 23,danger
-24,agréable.1
+24,agréable
 25,température
 26,grand
 27,petit

@@ -26,10 +26,10 @@
 24,pompier
 25,ambulance
 26,salon
-27,volet.1
+27,volet
 28,télévision
 29,livre
-30,CD
+30,cd
 31,pochette
 32,encyclopédie
 33,dictionnaire
@@ -40,8 +40,8 @@
 38,tableau
 39,peinture
 40,aquarelle
-41,tapis.1
-42,table.1
+41,tapis
+42,table
 43,coussin
 44,couverture
 45,canapé
@@ -65,9 +65,9 @@
 63,serviette
 64,verre
 65,couloir
-66,lampe.1
+66,lampe
 67,chambre_d'amis
-68,coussin.1
+68,coussin
 69,vélo
 70,commode
 71,table_à_repasser
@@ -76,7 +76,7 @@
 74,ceintre
 75,draps
 76,taie_d'oreiller
-77,serviette.1
+77,serviette
 78,chiffon
 79,table_à_langer
 80,fer_à_repasser
@@ -90,4 +90,4 @@
 88,rhododendron
 89,rose
 90,toit
-91,store.1
+91,store
