@@ -38,7 +38,7 @@ def remove_underscores(word: str) -> str:
 
 def word_redux():
     path = "Data/Verbal Tasks reformated/"
-    newpath = "Data/Verbal Tasks redux/"
+    newpath = "Data/Verbal Tasks original redux/"
     allfiles = listdir(path)
     csvfiles = [x for x in allfiles if '.csv' in x]
 

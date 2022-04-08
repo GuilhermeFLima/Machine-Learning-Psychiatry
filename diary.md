@@ -1,4 +1,4 @@
-###April 1
+### April 1
 Reformated the csv files so they are vertical and have header (a single column name which is just "0").
 - Gonna check the verbal tasks individually now -> too cumbersome, will clean using functions.
 - Removed unwanted periods.
@@ -15,3 +15,5 @@ Reformated the csv files so they are vertical and have header (a single column n
 ### April 7
 
 - added comments and "if \_\_name\_\_ == '\_\_main\_\_' ".
+- Script to reduce number of words in each verbal task entry.
+- 
