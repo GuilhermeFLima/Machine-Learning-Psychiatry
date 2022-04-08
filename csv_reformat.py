@@ -40,7 +40,7 @@ def remove_uppercase(word: str) -> str:
 
 def csv_reformat():
     path = "Data/Verbal Tasks original/"
-    newpath = "Data/Verbal Tasks original reformated/"
+    newpath = "Data/Verbal Tasks reformated/"
     allfiles = listdir(path)
     csvfiles = [x for x in allfiles if '.csv' in x]
 
@@ -55,7 +55,8 @@ def csv_reformat():
             s = s.map(remove_uppercase)
             newfilename = newpath + file
             s.to_csv(newfilename)
-        except:
+        except Exception as e:
+            print(e)
             print('problem with:', file)
 
     return None

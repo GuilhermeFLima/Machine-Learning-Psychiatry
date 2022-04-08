@@ -3,7 +3,7 @@ import fasttext.util
 import numpy as np
 from scipy import spatial
 
-fasttext.util.download_model('fr', if_exists='ignore')
+#fasttext.util.download_model('fr', if_exists='ignore')
 ft = fasttext.load_model('cc.fr.300.bin')
 
 
@@ -60,8 +60,8 @@ triples = [(a, b, c)
 
 double_phrases = [a + '_' + b for (a, b) in doubles]
 triple_phrases = [a + '_' + b + '_' + c for (a, b, c) in triples]
-triples_series = pd.Series(triple_phrases)
-print(avg_neighbour_sim(triples_series))
+double_series = pd.Series(double_phrases)
+print(avg_neighbour_sim(double_series))
 
 # for (v, p) in zip(triples, triple_phrases):
 #     v1 = vec_dict[v[0]]

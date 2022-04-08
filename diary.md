@@ -16,4 +16,5 @@ Reformated the csv files so they are vertical and have header (a single column n
 
 - added comments and "if \_\_name\_\_ == '\_\_main\_\_' ".
 - Script to reduce number of words in each verbal task entry.
-- 
+- Finished neighbour similarity function for pandas Series.
+- corrected: piscines -> piscine.
