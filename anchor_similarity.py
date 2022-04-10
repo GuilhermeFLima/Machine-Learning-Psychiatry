@@ -3,9 +3,6 @@ import fasttext.util
 import numpy as np
 from scipy import spatial
 
-#fasttext.util.download_model('fr', if_exists='ignore')
-ft = fasttext.load_model('cc.fr.300.bin')
-
 
 def cos_sim(v1, v2):
     return 1 - spatial.distance.cosine(v1, v2)
@@ -28,7 +25,17 @@ def avg_anchor_sim(anchor_word, series):
         similarities.append(sim)
     return np.mean(similarities)
 
-anchor = 'chien'
-words = ['chat', 'chien', 'chien_noir', 'maison', 'roi']
-s = pd.Series(words)
-print(avg_anchor_sim(anchor_word=anchor, series=s))
+
+anchor_list =['courage', 'debut', 'douleur', 'piscine', 'royaume', 'serpent']
+
+
+def get_anchor(filename: str) -> str:
+    for word in anchor_list:
+        if word in filename:
+            return word
+
+
+if __name__ == '__main__':
+    # fasttext.util.download_model('fr', if_exists='ignore')
+    ft = fasttext.load_model('cc.fr.300.bin')
+    pass
