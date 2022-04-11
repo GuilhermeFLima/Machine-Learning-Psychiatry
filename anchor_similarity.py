@@ -9,11 +9,14 @@ def cos_sim(v1, v2):
 
 
 def avg_anchor_sim(anchor_vec, series):
-    similarities = []
-    for (i, vec) in series.iteritems():
-        sim = cos_sim(anchor_vec, vec)
-        similarities.append(sim)
-    return np.mean(similarities)
+    if len(series) < 1:
+        return 0
+    else:
+        similarities = []
+        for (i, vec) in series.iteritems():
+            sim = cos_sim(anchor_vec, vec)
+            similarities.append(sim)
+        return np.mean(similarities)
 
 
 anchor_list =['courage', 'debut', 'douleur', 'piscine', 'royaume', 'serpent']
