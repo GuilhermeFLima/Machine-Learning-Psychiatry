@@ -18,3 +18,10 @@ Reformated the csv files so they are vertical and have header (a single column n
 - Script to reduce number of words in each verbal task entry.
 - Finished neighbour similarity function for pandas Series.
 - corrected: piscines -> piscine.
+
+### April 10
+
+To do: refactor the similarity scripts so that vectors are extracted
+only once.
+
+- changed similarity scripts to expect a series with vectors, and not phrases. The series of vectors will be created in the get_vec.py script.
