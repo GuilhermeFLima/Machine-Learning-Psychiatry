@@ -12,7 +12,6 @@ def avg_anchor_sim(anchor_vec, series):
     similarities = []
     for (i, vec) in series.iteritems():
         sim = cos_sim(anchor_vec, vec)
-        print(sim)
         similarities.append(sim)
     return np.mean(similarities)
 
