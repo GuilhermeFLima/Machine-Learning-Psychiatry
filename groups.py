@@ -18,7 +18,7 @@ names_to_groups_dict = {name: group for (group, name) in groups_and_names}
 all_numbers = control + mania + mixed_mania + mixed_depression + depression + euthymia
 
 
-def number_to_group(number:str) -> str:
+def number_to_group(number: str) -> str:
     for group in groups:
         if number in group:
             for name in groupnames:

@@ -13,6 +13,6 @@ groupnames = ['control', 'mania', 'mixed mania', 'mixed depression', 'depression
 s_groups = df['group']
 s_groups = s_groups.map(lambda n: groupnames.index(n))
 
-pd.plotting.scatter_matrix(df2, c=s_groups, marker='o')
+pd.plotting.scatter_matrix(df1, c=s_groups, marker='o')
 plt.legend()
 plt.show()
