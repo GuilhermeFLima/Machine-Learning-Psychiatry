@@ -22,9 +22,19 @@ Reformated the csv files so they are vertical and have header (a single column n
 ### April 10
 
 To do: refactor the similarity scripts so that vectors are extracted
-only once.
+only once. Done.
 
 - changed similarity scripts to expect a series with vectors, and not phrases. The series of vectors will be created in the get_vec.py script.
 - First draft of feature extract done. Need to loop over all verbal tasks and over all subjects, then join the dataframes accordingly. Also need to be careful with flit and flib.
 - Looped over all anchors for feature extraction.
 - Concatenated all csv files into one in Verbal Tasks joined features.
+
+### April 13
+
+- Support Vector Machine classification successful: 82% accuracy on test set for separating depressed from manic, but failed with other groups.
+
+Todo: Grid search, cross validation, and merge classes (e.g mania & mixed mania).
+
+### April 14
+
+- Finished merge function.
