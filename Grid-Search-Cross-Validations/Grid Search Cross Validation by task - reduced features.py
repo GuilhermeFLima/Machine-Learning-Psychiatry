@@ -19,7 +19,7 @@ anchor_cols = ['unique_words', 'repeat_words', 'avg_anch_sim', 'avg_global_sim',
 simple_fluence_list = ['fcat', 'flib', 'flit']
 simple_cols = ['unique_words', 'repeat_words', 'avg_global_sim', 'avg_neigh_sim']
 
-df = pd.read_csv("Data/Verbal Tasks joined features/joined_features.csv")
+df = pd.read_csv("../Data/Verbal Tasks joined features/joined_features.csv")
 
 
 group1 = 'mania'
