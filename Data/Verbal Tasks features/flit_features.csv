@@ -1,4 +1,4 @@
-,number,group,unique_words,repeat_words,avg_global_sim,avg_neigh_sim
+,number,group,unique_entries,repeat_entries,avg_global_sim,avg_neigh_sim
 0,01,depression,0,0,0.0,0.0
 1,02,depression,30,0,0.19951563988780152,0.20876744312459025
 2,03,euthymia,24,1,0.20208090157551772,0.2891186932101846
