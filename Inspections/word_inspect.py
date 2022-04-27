@@ -45,7 +45,7 @@ connectives_ = [c + '_' for c in connectives] + apost
 
 if __name__ == "__main__":
 
-    path = "Data/Verbal Tasks redux/"
+    path = "../Data/Verbal Tasks redux/"
     allfiles = listdir(path)
     csvfiles = [x for x in allfiles if '.csv' in x]
 
