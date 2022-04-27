@@ -57,13 +57,6 @@ for (j, (task, cols)) in enumerate(task_features.items()):
     best_gamma = best_params['gamma']
     kernel = best_params['kernel']
     best_cv = grid_search.best_score_
-    # print('Task: ', task)
-    # print("Test set score: {:.2f}".format(test_score))
-    # print("F1 score: {:.2f}".format(F1))
-    # print("MCC score: {:.2f}".format(MCC))
-    # print("Best parameters: {}".format(grid_search.best_params_))
-    # print("Best cross-validation score: {:.2f}".format(best_cv))
-
     results.loc[j] = [task, test_score, F1, MCC, kernel, best_C, best_gamma, best_cv]
     print(task, end=' ')
     #print("Confusion matrix:\n{}".format(conf_matrix))
