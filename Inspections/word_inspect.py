@@ -53,7 +53,7 @@ if __name__ == "__main__":
     for file in csvfiles:
         df = pd.read_csv(path+file)
         for index, word in df['0'].items():
-            if word.count('_') > 3:
+            if 1 < word.count('_') < 3:
                 i += 1
                 print(i, word, file)
 
