@@ -2,6 +2,7 @@ import get_vec as gv
 import anchor_similarity as anchsim
 import neighbour_similarity as neighsim
 import global_similarity as globalsim
+import word_repetitions as wordrep
 import groups
 import pandas as pd
 import numpy as np
@@ -17,10 +18,12 @@ def get_number(filename: str) -> str:
 
 
 anchor_list = ['courage', 'debut', 'douleur', 'piscine', 'royaume', 'serpent']
-cols = ['number', 'group', 'unique_words', 'repeat_words', 'avg_anch_sim', 'avg_global_sim', 'avg_neigh_sim']
+anchor_cols = ['number', 'group', 'unique_entries', 'repeat_entries', 'repeat_words', 'avg_anch_sim', 'avg_global_sim', 'avg_neigh_sim']
+simple_fluence_list = ['fcat', 'flib', 'flit']
+simple_cols = ['number', 'group', 'unique_entries', 'repeat_entries', 'repeat_words', 'avg_global_sim', 'avg_neigh_sim']
 
 
-def features():
+def anchor_features():
     path = "Data/Verbal Tasks 1-3/"
     newpath = "Data/Verbal Tasks features/"
     allfiles = listdir(path)
@@ -44,18 +47,59 @@ def features():
                     anch_sim = anchsim.avg_anchor_sim(anchor_vec=anch_vec, series=s_vec)
                     s_unique = gv.vec_series_unique(s)
                     global_sim = globalsim.global_sim(s_unique)
-                    unique_words = len(s_unique)
-                    repeat_words = s.duplicated().sum()
-                    arr = np.array([number, group, unique_words, repeat_words, anch_sim, global_sim, neigh_sim])
+                    unique_entries = len(s_unique)
+                    repeat_entries = s.duplicated().sum()
+                    repeat_words = wordrep.word_repeat(s)
+                    arr = np.array([number, group, unique_entries, repeat_entries, repeat_words, anch_sim, global_sim, neigh_sim])
                     list_of_features.append(arr)
 
                 except Exception as e:
                     print(e)
                     print('problem with:', file)
-        df = pd.DataFrame(list_of_features, columns=cols)
+        df = pd.DataFrame(list_of_features, columns=anchor_cols)
         new_filename = anchor + '_features.csv'
         df.to_csv(newpath+new_filename)
 
 
+def simple_features():
+    path = "Data/Verbal Tasks 1-3/"
+    newpath = "Data/Verbal Tasks features/"
+    allfiles = listdir(path)
+    csvfiles = sorted([x for x in allfiles if '.csv' in x])
+
+    for fluence in simple_fluence_list:
+        print(fluence)
+        list_of_features = []
+        for file in csvfiles:
+            if fluence in file:
+                try:
+                    path_name = path + file
+                    df = pd.read_csv(path_name)
+                    s = df['0']
+                    number = get_number(file)
+                    group = groups.number_to_group(number)
+                    s_vec = gv.vec_series(s)
+                    neigh_sim = neighsim.avg_neighbour_sim(s_vec)
+                    s_unique = gv.vec_series_unique(s)
+                    global_sim = globalsim.global_sim(s_unique)
+                    unique_entries = len(s_unique)
+                    repeat_entries = s.duplicated().sum()
+                    repeat_words = wordrep.word_repeat(s)
+                    arr = np.array([number, group, unique_entries, repeat_entries, repeat_words, global_sim, neigh_sim])
+                    list_of_features.append(arr)
+
+                except Exception as e:
+                    print(e)
+                    print('problem with:', file)
+        df = pd.DataFrame(list_of_features, columns=simple_cols)
+        new_filename = fluence + '_features.csv'
+        df.to_csv(newpath + new_filename)
+
+
 if __name__ == '__main__':
-    features()
+    anchor_features()
+    simple_features()
+
+
+
+

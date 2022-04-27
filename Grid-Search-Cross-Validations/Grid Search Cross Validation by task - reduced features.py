@@ -58,11 +58,12 @@ for (task, cols) in task_features.items():
     F1 = f1_score(y_test, pred_svc)
     MCC = matthews_corrcoef(y_test, pred_svc)
 
-    print('Task: ', task)
-    print("Test set score: {:.2f}".format(grid_search.score(X_test_scaled, y_test)))
-    print("F1 score: {:.2f}".format(F1))
-    print("MCC score: {:.2f}".format(MCC))
-    print("Best parameters: {}".format(grid_search.best_params_))
-    print("Best cross-validation score: {:.2f}".format(grid_search.best_score_))
+
+    # print('Task: ', task)
+    # print("Test set score: {:.2f}".format(grid_search.score(X_test_scaled, y_test)))
+    # print("F1 score: {:.2f}".format(F1))
+    # print("MCC score: {:.2f}".format(MCC))
+    # print("Best parameters: {}".format(grid_search.best_params_))
+    # print("Best cross-validation score: {:.2f}".format(grid_search.best_score_))
     #print("Confusion matrix:\n{}".format(conf_matrix))
 

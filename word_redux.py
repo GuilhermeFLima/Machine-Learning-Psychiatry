@@ -2,7 +2,7 @@
 # i) removing connectives (pronouns + prepositions)
 # ii) removing underscores at the _beginning and end_ of an entry.
 
-from word_inspect import _connectives_, connectives_
+from Inspections.word_inspect import _connectives_, connectives_
 import pandas as pd
 from os import listdir
 

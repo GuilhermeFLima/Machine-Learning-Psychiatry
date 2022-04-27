@@ -27,7 +27,8 @@ df_y = column_or_1d(y=df_sub[['group number']], warn=False)
 
 print('Classification of {} vs {} using Support Vector Machines:'.format(group1, group2))
 
-for (task, cols) in task_features.items():
+results = pd.DataFrame(columns=['task', 'acc', 'F1', 'MCC', 'kernel', 'C', 'gamma', 'best cv'])
+for (j, (task, cols)) in enumerate(task_features.items()):
     df_X_task = df_X[cols]
     X_train, X_test, y_train, y_test = train_test_split(df_X_task, df_y, random_state=0)
 
@@ -49,12 +50,30 @@ for (task, cols) in task_features.items():
     conf_matrix = confusion_matrix(y_test, pred_svc)
     F1 = f1_score(y_test, pred_svc)
     MCC = matthews_corrcoef(y_test, pred_svc)
+    test_score = grid_search.score(X_test_scaled, y_test)
+    best_params = dict.fromkeys(['C', 'gamma', 'kernel'])
+    best_params.update(grid_search.best_params_)
+    best_C = best_params['C']
+    best_gamma = best_params['gamma']
+    kernel = best_params['kernel']
+    best_cv = grid_search.best_score_
+    # print('Task: ', task)
+    # print("Test set score: {:.2f}".format(test_score))
+    # print("F1 score: {:.2f}".format(F1))
+    # print("MCC score: {:.2f}".format(MCC))
+    # print("Best parameters: {}".format(grid_search.best_params_))
+    # print("Best cross-validation score: {:.2f}".format(best_cv))
 
-    print('Task: ', task)
-    print("Test set score: {:.2f}".format(grid_search.score(X_test_scaled, y_test)))
-    print("F1 score: {:.2f}".format(F1))
-    print("MCC score: {:.2f}".format(MCC))
-    print("Best parameters: {}".format(grid_search.best_params_))
-    print("Best cross-validation score: {:.2f}".format(grid_search.best_score_))
+    results.loc[j] = [task, test_score, F1, MCC, kernel, best_C, best_gamma, best_cv]
+    print(task, end=' ')
     #print("Confusion matrix:\n{}".format(conf_matrix))
 
+desired_width = 320
+pd.set_option('display.width', desired_width)
+pd.set_option('display.max_columns', 10)
+pd.set_option('display.precision', 2)
+print('\n')
+print(results)
+print('Average accuracy: {:.2f}'.format(results['acc'].mean()))
+print('Accuracy SD: {:.2f}'.format(results['acc'].std()))
+print('Max accuracy: {:.2f}'.format(results['acc'].max()))

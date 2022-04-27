@@ -38,3 +38,31 @@ Todo: Grid search, cross validation, and merge classes (e.g mania & mixed mania)
 ### April 14
 
 - Finished merge function.
+
+### April 21
+
+- Finished Grid Search with Cross Validation:
+  - with all features;
+  - with merged classes;
+  - with each verbal fluency task separate.
+
+- Logistic Regression with L1 penalty
+- Logistic Regression by task: not so great
+
+### April 22
+
+- removed feature 'repeat_words' and algorithms worsened... Reason for removing was that the had weight = 0 in LogReg with L1 penalty
+
+### April 24
+
+- renamed unique_words and repeat_words to unique_features and repeat_features.
+- finished word repeat function. Need to include word repetitions in features.
+
+### April 25
+
+- introduced repeated words as feature: SVM improved!
+
+- New ideas:
+  - remove features to see if SVM alg improves.
+  - summarize in dataframe.
+  - Decision Trees, then Random Forests.

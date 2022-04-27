@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-filename = "Data/Verbal Tasks features/douleur_features.csv"
+filename = "../Data/Verbal Tasks features/douleur_features.csv"
 df = pd.read_csv(filename)
 df.drop(['number', 'Unnamed: 0'], axis=1, inplace=True)
 df = df[(df['group'] == 'mania') | (df['group'] == 'depression')]
