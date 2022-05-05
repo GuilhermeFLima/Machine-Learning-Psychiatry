@@ -5,18 +5,26 @@ from sklearn.svm import SVC
 from sklearn.utils.validation import column_or_1d
 from sklearn.preprocessing import MinMaxScaler
 
+
 def group_select(dataframe, group1, group2):
     mask = (dataframe['group'] == group1) | (dataframe['group'] == group2)
     return dataframe[mask]
 
 
 groupnames = ['control', 'mania', 'mixed mania', 'mixed depression', 'depression', 'euthymia']
+groupnames = ['control', 'mania', 'mixed mania', 'mixed depression', 'depression', 'euthymia']
+anchor_list = ['courage', 'debut', 'douleur', 'piscine', 'royaume', 'serpent']
+anchor_cols = ['unique_entries', 'repeat_entries', 'repeat_words', 'avg_anch_sim', 'avg_global_sim', 'avg_neigh_sim']
+simple_fluence_list = ['fcat', 'flib', 'flit']
+simple_cols = ['unique_entries', 'repeat_entries', 'repeat_words', 'avg_global_sim', 'avg_neigh_sim']
 
-df = pd.read_csv("../Data/Verbal Tasks joined features/joined_features.csv")
+
+df = pd.read_csv("../../Data/Verbal Tasks joined features/joined_features.csv")
 group1 = 'mania'
 group2 = 'depression'
 df_sub = group_select(df, group1, group2)
-to_drop = ['Unnamed: 0', 'number', 'group', 'group number']
+features_to_drop = [task + '_avg_anch_sim' for task in anchor_list]
+to_drop = ['Unnamed: 0', 'number', 'group', 'group number'] + features_to_drop
 df_X = df_sub.drop(to_drop, axis=1)
 df_y = column_or_1d(y=df_sub[['group number']], warn=False)
 

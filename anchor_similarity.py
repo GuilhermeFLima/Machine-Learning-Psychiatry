@@ -19,7 +19,7 @@ def avg_anchor_sim(anchor_vec, series):
         return np.mean(similarities)
 
 
-anchor_list =['courage', 'debut', 'douleur', 'piscine', 'royaume', 'serpent']
+anchor_list = ['courage', 'debut', 'douleur', 'piscine', 'royaume', 'serpent']
 
 
 def get_anchor(filename: str) -> str:

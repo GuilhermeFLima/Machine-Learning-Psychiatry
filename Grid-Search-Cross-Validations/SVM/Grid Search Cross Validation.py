@@ -12,19 +12,12 @@ def group_select(dataframe, group1, group2):
 
 
 groupnames = ['control', 'mania', 'mixed mania', 'mixed depression', 'depression', 'euthymia']
-groupnames = ['control', 'mania', 'mixed mania', 'mixed depression', 'depression', 'euthymia']
-anchor_list = ['courage', 'debut', 'douleur', 'piscine', 'royaume', 'serpent']
-anchor_cols = ['unique_entries', 'repeat_entries', 'repeat_words', 'avg_anch_sim', 'avg_global_sim', 'avg_neigh_sim']
-simple_fluence_list = ['fcat', 'flib', 'flit']
-simple_cols = ['unique_entries', 'repeat_entries', 'repeat_words', 'avg_global_sim', 'avg_neigh_sim']
 
-
-df = pd.read_csv("../Data/Verbal Tasks joined features/joined_features.csv")
+df = pd.read_csv("../../Data/Verbal Tasks joined features/joined_features.csv")
 group1 = 'mania'
 group2 = 'depression'
 df_sub = group_select(df, group1, group2)
-features_to_drop = [task + '_repeat_entries' for task in anchor_list + simple_fluence_list]
-to_drop = ['Unnamed: 0', 'number', 'group', 'group number'] + features_to_drop
+to_drop = ['Unnamed: 0', 'number', 'group', 'group number']
 df_X = df_sub.drop(to_drop, axis=1)
 df_y = column_or_1d(y=df_sub[['group number']], warn=False)
 
@@ -42,7 +35,7 @@ param_grid = [{'kernel': ["rbf"], 'C': param_range, 'gamma': param_range},
               ]
 
 LOO = LeaveOneOut()
-grid_search = GridSearchCV(SVC(), param_grid, cv=LOO, return_train_score=True)
+grid_search = GridSearchCV(SVC(), param_grid, cv=10, return_train_score=True)
 
 grid_search.fit(X_train_scaled, y_train)
 print('Classification of depression vs mania using Support Vector Machines:')
@@ -50,11 +43,3 @@ print("Test set score: {:.2f}".format(grid_search.score(X_test_scaled, y_test)))
 print("Best parameters: {}".format(grid_search.best_params_))
 print("Best cross-validation score: {:.2f}".format(grid_search.best_score_))
 
-# results = pd.DataFrame(grid_search.cv_results_)
-# desired_width = 320
-# pd.set_option('display.width', desired_width)
-# np.set_printoptions(linewidth=desired_width)
-# pd.set_option('display.max_columns', 10)
-# print(results[['param_C', 'param_gamma',
-#                'split0_test_score', 'split1_test_score', 'split2_test_score', 'split3_test_score', 'split4_test_score'
-#                ]])

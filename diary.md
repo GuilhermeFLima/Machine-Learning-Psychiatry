@@ -66,3 +66,13 @@ Todo: Grid search, cross validation, and merge classes (e.g mania & mixed mania)
   - remove features to see if SVM alg improves.
   - summarize in dataframe.
   - Decision Trees, then Random Forests.
+
+### April 26
+- SVM works better on some features when avg_anch_sim is removed!
+
+### May 2
+- Random Forests not that great...
+
+## To do:
+- Refactor Grid Search Cross Vals
+- change feature repeat_words to (repeat_words - repeat_phrases).

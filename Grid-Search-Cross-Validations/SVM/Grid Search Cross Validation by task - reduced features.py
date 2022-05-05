@@ -26,7 +26,7 @@ anchor_cols = ['avg_anch_sim']
 simple_fluence_list = ['fcat', 'flib', 'flit']
 simple_cols = ['unique_entries', 'repeat_entries', 'repeat_words', 'avg_global_sim', 'avg_neigh_sim']
 
-df = pd.read_csv("../Data/Verbal Tasks joined features/joined_features.csv")
+df = pd.read_csv("../../Data/Verbal Tasks joined features/joined_features.csv")
 
 
 group1 = 'mania'
@@ -63,7 +63,7 @@ for (j, feature) in enumerate(anchor_cols):
                       ]
 
         LOO = LeaveOneOut()
-        grid_search = GridSearchCV(SVC(), param_grid, cv=LOO, return_train_score=True)
+        grid_search = GridSearchCV(SVC(), param_grid, cv=10, return_train_score=True)
 
         svc = grid_search.fit(X_train_scaled, y_train)
         pred_svc = svc.predict(X_test_scaled)
@@ -90,3 +90,24 @@ for (j, feature) in enumerate(anchor_cols):
 print('\n')
 print(accuracy_comparison)
 
+
+
+
+# only linear kernels
+# Removing avg_anch_sim
+# courage debut douleur piscine royaume serpent fcat flib flit
+#
+#       task   acc    F1   MCC  kernel         C gamma  best cv
+# 0  courage  0.91  0.93  0.81  linear  3.16e+01  None     0.62
+# 1    debut  0.73  0.84  0.00  linear  1.00e-03  None     0.55
+# 2  douleur  0.82  0.86  0.67  linear  1.00e+02  None     0.57
+# 3  piscine  0.45  0.50  0.04  linear  1.00e+01  None     0.58
+# 4  royaume  0.64  0.75  0.08  linear  1.00e+02  None     0.68
+# 5  serpent  0.73  0.84  0.00  linear  1.00e-03  None     0.55
+# 6     fcat  0.73  0.82  0.24  linear  1.00e+02  None     0.81
+# 7     flib  0.55  0.55  0.38  linear  3.16e+00  None     0.65
+# 8     flit  0.45  0.57 -0.15  linear  1.00e+01  None     0.61
+#
+#
+#         removed   avg   max   std
+# 0  avg_anch_sim  0.67  0.91  0.16
