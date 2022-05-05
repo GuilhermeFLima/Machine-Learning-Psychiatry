@@ -66,6 +66,6 @@ if __name__ == '__main__':
     joined_tasks = join_dataframes(dataframes=dfs)
     df0 = number_group_groupnumber()
     final_dataframe = pd.concat([df0, joined_tasks], axis=1)
-    final_dataframe.to_csv('Data/Verbal Tasks joined features/joined_features2.csv', index=False)
+    final_dataframe.to_csv('Data/Verbal Tasks joined features/joined_features.csv', index=False)
 
 
