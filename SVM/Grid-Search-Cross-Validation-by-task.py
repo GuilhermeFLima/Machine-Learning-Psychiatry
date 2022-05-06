@@ -59,7 +59,7 @@ if __name__ == '__main__':
     for (j, (task, file)) in enumerate(zip(tasks, csv_files)):
 
         # Reading the csv file into a dataframe and selecting the groups
-        path = "../../Data/Verbal Tasks features/"
+        path = "../Data/Verbal Tasks features/"
         df = pd.read_csv(path + file)
         df = group_select(df, group1, group2)
 

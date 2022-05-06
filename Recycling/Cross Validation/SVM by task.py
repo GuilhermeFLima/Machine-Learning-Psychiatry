@@ -1,6 +1,6 @@
 import pandas as pd
 
-params_file = '../../Grid-Search-Cross-Validations/SVM/GSCV_results.csv'
+params_file = '../../SVM/GSCV_results.csv'
 
 params = pd.read_csv(params_file)
 print(para)

@@ -8,13 +8,13 @@ pd.set_option('display.max_columns', 10)
 pd.set_option('display.precision', 2)
 
 
-means = pd.read_csv('../Grid-Search-Cross-Validations/SVM/permutation_importance_mean.csv')
+means = pd.read_csv('../SVM/permutation_importance_mean.csv')
 means = means.set_index('task')
-stds = pd.read_csv('../Grid-Search-Cross-Validations/SVM/permutation_importance_std.csv')
+stds = pd.read_csv('../SVM/permutation_importance_std.csv')
 stds = stds.set_index('task')
 
 
-task = 'courage'
+task = 'serpent'
 fig, ax = plt.subplots()
 features = means.columns
 y_pos = np.arange(len(features))

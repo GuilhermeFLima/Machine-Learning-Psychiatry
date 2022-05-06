@@ -81,3 +81,4 @@ Todo: Grid search, cross validation, and merge classes (e.g mania & mixed mania)
 
 - Started refactoring:
   - removing avg_anch_sim. DONE
+  - 
