@@ -14,7 +14,7 @@ def group_select(dataframe, group1, group2):
 
 groupnames = ['control', 'mania', 'mixed mania', 'mixed depression', 'depression', 'euthymia']
 
-df = pd.read_csv("../../Data/Verbal Tasks joined features/joined_features.csv")
+df = pd.read_csv("../../Recycling/Verbal Tasks joined features/joined_features.csv")
 
 df = gm.group_merge(df, 'mania', 'mixed mania')
 df = gm.group_merge(df, 'depression', 'mixed depression')

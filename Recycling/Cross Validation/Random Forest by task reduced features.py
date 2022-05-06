@@ -1,11 +1,3 @@
-import pandas as pd
-
-params_file = '../Grid-Search-Cross-Validations/SVM/GSCV_results.csv'
-
-params = pd.read_csv(params_file)
-print(para)
-print(df['gamma'][df['task'] == 'debut'])
-
 
 # clf = svm.SVC(kernel='linear', C=1, random_state=42)
 # scores = cross_val_score(clf, X, y, cv=5)
@@ -29,7 +21,7 @@ def group_select(dataframe, group1, group2):
 
 groupnames = ['control', 'mania', 'mixed mania', 'mixed depression', 'depression', 'euthymia']
 
-df = pd.read_csv("../Data/Verbal Tasks joined features/joined_features.csv")
+df = pd.read_csv("../Verbal Tasks joined features/joined_features.csv")
 
 
 group1 = 'mania'
@@ -42,13 +34,15 @@ df_y = column_or_1d(y=df_sub[['group number']], warn=False)
 print('Classification of {} vs {} using Random Forests:'.format(group1, group2))
 
 results = pd.DataFrame(columns=['task', 'acc', 'F1', 'MCC', 'max_depth', 'best cv'])
+feature = 'avg_anch_sim'
 for (j, (task, cols)) in enumerate(task_features.items()):
     df_X_task = df_X[cols]
-
-
+    feature_to_drop = task + '_' + feature
+    if feature_to_drop in df_X_task.columns:
+        df_X_task = df_X_task.drop([feature_to_drop], axis=1)
     LOO = LeaveOneOut()
     rfc = RandomForestClassifier(max_depth=None, n_estimators=2000)
-    scores = cross_val_score(rfc, df_X_task, df_y, cv=10)
+    scores = cross_val_score(rfc, df_X_task, df_y, cv=LOO)
 
     # svc = grid_search.fit(X_train, y_train)
     # pred_svc = svc.predict(X_test)
@@ -61,7 +55,7 @@ for (j, (task, cols)) in enumerate(task_features.items()):
     # best_max_depth = best_params['max_depth']
     # best_cv = grid_search.best_score_
     # results.loc[j] = [task, test_score, F1, MCC, best_max_depth, best_cv]
-    print(task, np.median(scores))
+    print(task, np.mean(scores))
     #print("Confusion matrix:\n{}".format(conf_matrix))
 
 # desired_width = 320

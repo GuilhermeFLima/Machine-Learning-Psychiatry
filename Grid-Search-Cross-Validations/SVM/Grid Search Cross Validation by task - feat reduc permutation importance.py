@@ -28,13 +28,13 @@ anchor_cols = ['avg_anch_sim']
 simple_fluence_list = ['fcat', 'flib', 'flit']
 simple_cols = ['unique_entries', 'repeat_entries', 'repeat_words', 'avg_global_sim', 'avg_neigh_sim']
 
-df = pd.read_csv("../../Data/Verbal Tasks joined features/joined_features.csv")
+df = pd.read_csv("../../Recycling/Verbal Tasks joined features/joined_features.csv")
 
 
 group1 = 'mania'
 group2 = 'depression'
 df_sub = group_select(df, group1, group2)
-to_drop = ['Unnamed: 0', 'number', 'group', 'group number']
+to_drop = ['number', 'group', 'group number']
 df_X = df_sub.drop(to_drop, axis=1)
 df_y = column_or_1d(y=df_sub[['group number']], warn=False)
 

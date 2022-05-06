@@ -16,8 +16,25 @@ def get_number(filename: str) -> str:
     return list_with_number[0]
 
 
+def group_number(group: str) -> int:
+    """
+    Given a group name, returns it's corresponding number, ie:
+    control -> 0
+    mania -> 1
+    etc...
+    """
+    groupnames = ['control',
+                  'mania',
+                  'mixed mania',
+                  'mixed depression',
+                  'depression',
+                  'euthymia']
+    return groupnames.index(group)
+
+
+
 tasks = ['courage', 'debut', 'douleur', 'piscine', 'royaume', 'serpent', 'fcat', 'flib', 'flit']
-feature_cols = ['number', 'group', 'unique_entries', 'repeat_entries', 'repeat_words', 'avg_global_sim', 'avg_neigh_sim']
+feature_cols = ['number', 'group', 'group number', 'unique_entries', 'repeat_entries', 'repeat_words', 'avg_global_sim', 'avg_neigh_sim']
 
 
 def features():
@@ -37,6 +54,7 @@ def features():
                     s = df['0']
                     number = get_number(file)
                     group = groups.number_to_group(number)
+                    groupnumber = group_number(group)
                     s_vec = gv.vec_series(s)
                     neigh_sim = neighsim.avg_neighbour_sim(s_vec)
                     s_unique = gv.vec_series_unique(s)
@@ -44,7 +62,7 @@ def features():
                     unique_entries = len(s_unique)
                     repeat_entries = s.duplicated().sum()
                     repeat_words = wordrep.word_repeat(s)
-                    arr = np.array([number, group, unique_entries, repeat_entries, repeat_words, global_sim, neigh_sim])
+                    arr = np.array([number, group, groupnumber, unique_entries, repeat_entries, repeat_words, global_sim, neigh_sim])
                     list_of_features.append(arr)
 
                 except Exception as e:

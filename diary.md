@@ -76,3 +76,8 @@ Todo: Grid search, cross validation, and merge classes (e.g mania & mixed mania)
 ## To do:
 - Refactor Grid Search Cross Vals
 - change feature repeat_words to (repeat_words - repeat_phrases).
+
+### May 4
+
+- Started refactoring:
+  - removing avg_anch_sim. DONE

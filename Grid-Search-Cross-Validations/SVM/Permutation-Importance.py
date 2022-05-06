@@ -4,6 +4,9 @@ from sklearn.model_selection import train_test_split, GridSearchCV, LeaveOneOut
 from sklearn.svm import SVC
 from sklearn.utils.validation import column_or_1d
 from sklearn.preprocessing import MinMaxScaler
+from tasks_features import task_features
+from sklearn.inspection import permutation_importance
+import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, f1_score, matthews_corrcoef
 
 
@@ -15,8 +18,8 @@ def improve_dataframe_display():
     return None
 
 
-def group_select(dataframe, group_1, group_2):
-    mask = (dataframe['group'] == group_1) | (dataframe['group'] == group_2)
+def group_select(dataframe, group1, group2):
+    mask = (dataframe['group'] == group1) | (dataframe['group'] == group2)
     return dataframe[mask]
 
 
@@ -26,6 +29,8 @@ def split(dataframe):
     df_y = column_or_1d(y=dataframe[['group number']], warn=False)
     return df_X, df_y
 
+
+features = ['unique_entries', 'repeat_entries', 'repeat_words', 'avg_global_sim', 'avg_neigh_sim']
 
 csv_files = ['courage_features.csv',
              'debut_features.csv',
@@ -53,9 +58,9 @@ if __name__ == '__main__':
 
     group1 = 'mania'
     group2 = 'depression'
-    print('Classification of {} vs {} using Support Vector Machines:'.format(group1, group2))
-
-    results = pd.DataFrame(columns=['task', 'acc', 'F1', 'MCC', 'kernel', 'C', 'gamma', 'best cv'])
+    grid_search_results = pd.read_csv('GSCV_results.csv')
+    importance_mean = pd.DataFrame(columns=['task'] + features)
+    importance_std = pd.DataFrame(columns=['task'] + features)
     for (j, (task, file)) in enumerate(zip(tasks, csv_files)):
 
         # Reading the csv file into a dataframe and selecting the groups
@@ -75,43 +80,24 @@ if __name__ == '__main__':
         X_train_scaled = scaler.transform(X_train)
         X_test_scaled = scaler.transform(X_test)
 
-        # Defining the range of the parameters that will be tuned
-        param_range = [10**x for x in np.arange(-3, 3, 0.5)]
-        param_grid = [{'kernel': ["rbf"], 'C': param_range, 'gamma': param_range},
-                      {'kernel': ["linear"], 'C': param_range}
-                      ]
+        # Getting SVM parameters
+        kernel = grid_search_results.loc[j]['kernel']
+        C = grid_search_results.loc[j]['C']
+        if kernel == 'rbf':
+            gamma = grid_search_results.loc[j]['gamma']
 
-        # Using the Leave-One-Out cross-validator
-        LOO = LeaveOneOut()
+        # Building the classifier using parameters
+        svc = SVC(kernel=kernel, C=C, gamma=gamma)
+        svc.fit(X_train_scaled, y_train)
 
-        # Initialize GridSearchCV class
-        grid_search = GridSearchCV(SVC(), param_grid, cv=10, return_train_score=True)
-        # Fit to training data
-        svc = grid_search.fit(X_train_scaled, y_train)
+        # Calculating permutation importance
+        perm_importance = permutation_importance(svc, X_test_scaled, y_test, random_state=0)
+        importance_mean.loc[j] = [task] + list(perm_importance.importances_mean)
+        importance_std.loc[j] = [task] + list(perm_importance.importances_std)
 
-        # Extracting parameters and kernel and best scores
-        best_params = dict.fromkeys(['C', 'gamma', 'kernel'])
-        best_params.update(grid_search.best_params_)
-        best_C = best_params['C']
-        best_gamma = best_params['gamma']
-        kernel = best_params['kernel']
-        best_cv = grid_search.best_score_
-
-        # Predictions
-        pred_svc = svc.predict(X_test_scaled)
-        # Extracting accuracy, F1, MCC from predictions
-        conf_matrix = confusion_matrix(y_test, pred_svc)
-        F1 = f1_score(y_test, pred_svc)
-        MCC = matthews_corrcoef(y_test, pred_svc)
-        test_score = grid_search.score(X_test_scaled, y_test)
-
-        # Appending to results dataframe
-        results.loc[j] = [task, test_score, F1, MCC, kernel, best_C, best_gamma, best_cv]
-        print(task, end=' ')
-
+    print(importance_mean)
+    importance_mean.to_csv('permutation_importance_mean.csv', index=False)
     print('\n')
-    print(results)
-    print('Average accuracy: {:.2f}'.format(results['acc'].mean()))
-    print('Accuracy SD: {:.2f}'.format(results['acc'].std()))
-    print('Max accuracy: {:.2f}'.format(results['acc'].max()))
-    results.to_csv('GSCV_results.csv', index=False)
+    print(importance_std)
+    importance_std.to_csv('permutation_importance_std.csv', index=False)
+

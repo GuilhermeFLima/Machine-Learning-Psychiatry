@@ -15,7 +15,7 @@ def group_select(dataframe, group1, group2):
 
 groupnames = ['control', 'mania', 'mixed mania', 'mixed depression', 'depression', 'euthymia']
 
-df = pd.read_csv("../../Data/Verbal Tasks joined features/joined_features.csv")
+df = pd.read_csv("../Verbal Tasks joined features/joined_features.csv")
 
 
 group1 = 'mania'

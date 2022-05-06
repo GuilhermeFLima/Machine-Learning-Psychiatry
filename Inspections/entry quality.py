@@ -10,7 +10,7 @@ anchor_list = ['courage', 'debut', 'douleur', 'piscine', 'royaume', 'serpent']
 simple_fluence_list = ['fcat', 'flib', 'flit']
 tasks = anchor_list + simple_fluence_list
 
-path = "../Data/Verbal Tasks reformated/"
+path = "../Data/Verbal Tasks/"
 allfiles = listdir(path)
 
 results = pd.DataFrame(columns=['task', 'entries', 'avg', 'std', 'avg_bad', 'std_bad', 'avg_bad_pcnt', 'total_bad'])

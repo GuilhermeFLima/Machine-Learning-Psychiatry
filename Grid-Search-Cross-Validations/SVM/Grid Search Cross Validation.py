@@ -13,15 +13,15 @@ def group_select(dataframe, group1, group2):
 
 groupnames = ['control', 'mania', 'mixed mania', 'mixed depression', 'depression', 'euthymia']
 
-df = pd.read_csv("../../Data/Verbal Tasks joined features/joined_features.csv")
+df = pd.read_csv("../../Recycling/Verbal Tasks joined features/joined_features.csv")
 group1 = 'mania'
 group2 = 'depression'
 df_sub = group_select(df, group1, group2)
-to_drop = ['Unnamed: 0', 'number', 'group', 'group number']
+to_drop = ['number', 'group', 'group number']
 df_X = df_sub.drop(to_drop, axis=1)
 df_y = column_or_1d(y=df_sub[['group number']], warn=False)
 
-X_train, X_test, y_train, y_test = train_test_split(df_X, df_y, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(df_X, df_y, random_state=2)
 
 scaler = MinMaxScaler()
 scaler.fit(X_train)
