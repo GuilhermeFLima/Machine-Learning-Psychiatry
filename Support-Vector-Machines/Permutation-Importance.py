@@ -54,7 +54,8 @@ if __name__ == '__main__':
 
     group1 = 'mania'
     group2 = 'depression'
-    grid_search_results = pd.read_csv('GSCV_results.csv')
+    GSCV_results_file = group1 + '_vs_' + group2 + '_GSCV_results.csv'
+    grid_search_results = pd.read_csv(GSCV_results_file)
     importance_mean = pd.DataFrame(columns=['task'] + features)
     importance_std = pd.DataFrame(columns=['task'] + features)
     for (j, (task, file)) in enumerate(zip(tasks, csv_files)):
@@ -92,8 +93,10 @@ if __name__ == '__main__':
         importance_std.loc[j] = [task] + list(perm_importance.importances_std)
 
     print(importance_mean)
-    importance_mean.to_csv('permutation_importance_mean.csv', index=False)
+    importance_mean_file = group1 + '_vs_' + group2 + '_permutation_importance_mean.csv'
+    importance_mean.to_csv(importance_mean_file, index=False)
     print('\n')
     print(importance_std)
-    importance_std.to_csv('permutation_importance_std.csv', index=False)
+    importance_std_file = group1 + '_vs_' + group2 + '_permutation_importance_std.csv'
+    importance_std.to_csv(importance_std_file, index=False)
 

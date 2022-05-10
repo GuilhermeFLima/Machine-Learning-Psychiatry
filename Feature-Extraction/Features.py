@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import fasttext.util
 import re
-from groups import number_to_group
+from Data.Groups.groups import number_to_group
 from scipy import spatial
 
 
@@ -106,7 +106,7 @@ class Features:
 
 
 if __name__ == '__main__':
-    
+    pass
     # Uncomment to test.
     #
     # tf = '101 courage words.csv'

@@ -81,4 +81,11 @@ Todo: Grid search, cross validation, and merge classes (e.g mania & mixed mania)
 
 - Started refactoring:
   - removing avg_anch_sim. DONE
-  - 
+
+### May 10
+- Finished refactoring:
+  - separated scripts into folders.
+  - defined classes for feature extraction (but not for grid search cross-val).
+  - Put old code into Recycling folder.
+
+Need to check: why grid search cross val not working for depression vs mixed depression??? Problem in the group numbers???

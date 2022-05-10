@@ -25,3 +25,7 @@ def number_to_group(number: str) -> str:
                 if names_to_groups_dict[name] == group:
                     return name
 
+
+def group_to_number(group: str) -> int:
+    return groupnames.index(group)
+

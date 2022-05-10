@@ -5,6 +5,7 @@ from sklearn.svm import SVC
 from sklearn.utils.validation import column_or_1d
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import confusion_matrix, f1_score, matthews_corrcoef
+from Data.Groups.groups import group_to_number
 
 
 def improve_dataframe_display():
@@ -51,8 +52,8 @@ tasks = ['courage',
 if __name__ == '__main__':
     improve_dataframe_display()
 
-    group1 = 'mania'
-    group2 = 'depression'
+    group1 = 'depression'
+    group2 = 'mixed depression'
     print('Classification of {} vs {} using Support Vector Machines:'.format(group1, group2))
 
     results = pd.DataFrame(columns=['task', 'acc', 'F1', 'MCC', 'kernel', 'C', 'gamma', 'best cv'])
@@ -98,10 +99,11 @@ if __name__ == '__main__':
         best_cv = grid_search.best_score_
 
         # Predictions
+        positive_label = group_to_number(group1)
         pred_svc = svc.predict(X_test_scaled)
         # Extracting accuracy, F1, MCC from predictions
         conf_matrix = confusion_matrix(y_test, pred_svc)
-        F1 = f1_score(y_test, pred_svc)
+        F1 = f1_score(y_test, pred_svc, pos_label=positive_label)
         MCC = matthews_corrcoef(y_test, pred_svc)
         test_score = grid_search.score(X_test_scaled, y_test)
 
@@ -114,4 +116,5 @@ if __name__ == '__main__':
     print('Average accuracy: {:.2f}'.format(results['acc'].mean()))
     print('Accuracy SD: {:.2f}'.format(results['acc'].std()))
     print('Max accuracy: {:.2f}'.format(results['acc'].max()))
-    results.to_csv('GSCV_results.csv', index=False)
+    save_file = group1 + '_vs_' + group2 + '_GSCV_results.csv'
+    results.to_csv(save_file, index=False)

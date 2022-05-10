@@ -22,9 +22,11 @@ From each task, five features were extracted:
 
 The similarities between words was extracted using a pre-trained [fastText](https://fasttext.cc/) model for the French language trained on [Common Crawl](https://commoncrawl.org/).
 
-For each task, we ran the data through a support vector machine classifier as follows. In order to perform a grid search with cross-validation, the data was first split into two parts: a training set and a test set. The training set was split via cross validation (k=10) in order to perform a grid search for the best kernel (linear, radial-basis-function) and best parameters (C, gamma). Once the best parameters were found, the model was retrained and evaluated on the test set. The evaluation metrics where accuracy, F1 score, and Matthews correlation coefficient.
+For each task, we ran the data through a support vector machine classifier as follows. The data was first split into two parts: a training set and a test set. The training set was split via cross validation (k=10) in order to perform a grid search for the best kernel (linear, radial-basis-function) and best parameters (C, gamma). Once the best parameters were found, the model was retrained and evaluated on the test set. The evaluation metrics where accuracy, F1 score, and Matthews correlation coefficient.
 
 ### Results
+
+The following table summarizes the classification of mania vs depression.
 
 
 |    task |  acc |   F1 |   MCC | kernel |      C |  gamma | best cv |
@@ -45,3 +47,17 @@ Average accuracy: 0.63
 Accuracy SD: 0.20
 
 Max accuracy: 0.91
+
+The following table summarizes the importance of each feature by calculating its permutation importance.
+
+| task    | unique_entries | repeat_entries | repeat_words | avg_global_sim | avg_neigh_sim |
+|---------|---------------:|---------------:|-------------:|---------------:|--------------:|
+| courage |           0.20 |           0.15 |          0.0 |           0.22 |          0.13 |
+| debut   |          -0.04 |          -0.10 |        -0.11 |          -0.16 |         -0.16 |
+| douleur |          -0.04 |          -0.13 |         0.09 |           0.04 |          0.18 |
+| piscine |           0.05 |           0.04 |         0.13 |           0.07 |          0.16 |
+| royaume |          -0.02 |          -0.15 |         0.00 |          -0.11 |          0.00 |
+| serpent |           0.05 |           0.04 |         0.05 |           0.07 |          0.05 |
+| fcat    |           0.04 |            0.0 |         0.07 |          -0.04 |         -0.04 |
+| flib    |          -0.04 |           0.07 |        -0.04 |          -0.04 |          0.02 |
+| flit    |          -0.05 |          -0.07 |        -0.04 |          -0.05 |          0.09 |
