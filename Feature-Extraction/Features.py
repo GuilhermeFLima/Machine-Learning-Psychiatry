@@ -8,7 +8,7 @@ from scipy import spatial
 
 # fasttext.util.download_model('fr', if_exists='ignore')
 print('Loading French FastText model.')
-ft = fasttext.load_model('cc.fr.300.bin')
+ft = fasttext.load_model('Feature-Extraction/cc.fr.300.bin')
 print('Done.')
 
 
@@ -106,15 +106,18 @@ class Features:
 
 
 if __name__ == '__main__':
-    tf = '101 courage words.csv'
-    tp = 'Data/Verbal Tasks 1-3/'
-
-    test = Features(task_file=tf, task_path=tp)
-    print('Patient number:', test.patient_number())
-    print('Patient group:', test.patient_group())
-    print('Group\'s number:', test.group_number())
-    print('Repeat entries:', test.repeat_entries())
-    print('Unique entries:', test.unique_entries())
-    print('Repeat words:', test.repeat_words())
-    print('Global Similarity:', test.average_global_similarity())
-    print('Neighbour Similarity:', test.average_neighbour_similarity())
+    
+    # Uncomment to test.
+    #
+    # tf = '101 courage words.csv'
+    # tp = 'Data/Verbal Tasks 1-3/'
+    #
+    # test = Features(task_file=tf, task_path=tp)
+    # print('Patient number:', test.patient_number())
+    # print('Patient group:', test.patient_group())
+    # print('Group\'s number:', test.group_number())
+    # print('Repeat entries:', test.repeat_entries())
+    # print('Unique entries:', test.unique_entries())
+    # print('Repeat words:', test.repeat_words())
+    # print('Global Similarity:', test.average_global_similarity())
+    # print('Neighbour Similarity:', test.average_neighbour_similarity())
