@@ -43,7 +43,7 @@ def group_merge(dataframe, group_name1: str, group_name2: str):
 
 
 if __name__ == "__main__":
-    testdf = pd.read_csv("Recycling/Verbal Tasks joined features/joined_features.csv")
+    testdf = pd.read_csv("Verbal Tasks joined features/joined_features.csv")
     print(testdf.head(10))
     group1 = 'mania'
     group2 = 'mixed mania'

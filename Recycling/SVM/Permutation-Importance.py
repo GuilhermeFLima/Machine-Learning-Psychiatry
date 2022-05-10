@@ -1,13 +1,9 @@
-import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split, GridSearchCV, LeaveOneOut
+from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.utils.validation import column_or_1d
 from sklearn.preprocessing import MinMaxScaler
-from tasks_features import task_features
 from sklearn.inspection import permutation_importance
-import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, f1_score, matthews_corrcoef
 
 
 def improve_dataframe_display():
@@ -80,7 +76,7 @@ if __name__ == '__main__':
         X_train_scaled = scaler.transform(X_train)
         X_test_scaled = scaler.transform(X_test)
 
-        # Getting SVM parameters
+        # Getting Support-Vector-Machines parameters
         kernel = grid_search_results.loc[j]['kernel']
         C = grid_search_results.loc[j]['C']
         if kernel == 'rbf':

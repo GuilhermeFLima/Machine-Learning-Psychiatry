@@ -14,7 +14,7 @@ def count_filter(n: int, entry: str) -> bool:
 
 
 def entry_reduce(n: int, newpath: str):
-    path = "Data/Verbal Tasks redux/"
+    path = "../Data/Verbal Tasks redux/"
     allfiles = listdir(path)
     csvfiles = [x for x in allfiles if '.csv' in x]
 

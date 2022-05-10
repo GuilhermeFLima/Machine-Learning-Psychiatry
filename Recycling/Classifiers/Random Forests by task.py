@@ -1,9 +1,8 @@
-import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.utils.validation import column_or_1d
 from sklearn.model_selection import train_test_split
-from tasks_features import task_features
+from Recycling.tasks_features import task_features
 
 
 def group_select(dataframe, group1, group2):

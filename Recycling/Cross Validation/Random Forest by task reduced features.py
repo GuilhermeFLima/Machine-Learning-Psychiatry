@@ -5,13 +5,11 @@
 
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split, GridSearchCV, LeaveOneOut
+from sklearn.model_selection import LeaveOneOut
 from sklearn.model_selection import cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.utils.validation import column_or_1d
-from sklearn.preprocessing import MinMaxScaler
-from tasks_features import task_features
-from sklearn.metrics import confusion_matrix, f1_score, matthews_corrcoef
+from Recycling.tasks_features import task_features
 
 
 def group_select(dataframe, group1, group2):

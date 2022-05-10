@@ -4,10 +4,8 @@ from sklearn.model_selection import train_test_split, GridSearchCV, LeaveOneOut
 from sklearn.svm import SVC
 from sklearn.utils.validation import column_or_1d
 from sklearn.preprocessing import MinMaxScaler
-from tasks_features import task_features
+from Recycling.tasks_features import task_features
 import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, f1_score, matthews_corrcoef
-
 
 desired_width = 320
 pd.set_option('display.width', desired_width)

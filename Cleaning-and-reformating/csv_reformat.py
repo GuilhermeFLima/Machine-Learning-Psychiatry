@@ -39,7 +39,7 @@ def remove_uppercase(word: str) -> str:
 
 
 def csv_reformat():
-    path = "Recycling/Verbal Tasks original/"
+    path = "../Recycling/Verbal Tasks original/"
     newpath = "Data/Verbal Tasks/"
     allfiles = listdir(path)
     csvfiles = [x for x in allfiles if '.csv' in x]

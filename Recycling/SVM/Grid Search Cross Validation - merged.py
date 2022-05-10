@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.svm import SVC
 from sklearn.utils.validation import column_or_1d
-import group_merge as gm
+from Recycling import group_merge as gm
 from sklearn.preprocessing import MinMaxScaler
 
 

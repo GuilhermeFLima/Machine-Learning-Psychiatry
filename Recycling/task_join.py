@@ -6,7 +6,7 @@ def features_dataframes(files_list: list) -> list:
     Given the list of csv files, returns the list of dataframes, and removes
     the columns 'number' and 'group', since these will be added later.
     """
-    path = "Data/Verbal Tasks features/"
+    path = "../Data/Verbal Tasks features/"
     files = [path + file for file in files_list]
     dataframes = [pd.read_csv(file) for file in files]
     for df in dataframes:
@@ -45,7 +45,7 @@ def number_group_groupnumber():
     """
     Returns a dataframe with the patient number, its group, and the group's number.
     """
-    file = "Data/Verbal Tasks features/courage_features.csv"
+    file = "../Data/Verbal Tasks features/courage_features.csv"
     df = pd.read_csv(file)
     df = df[['number', 'group']]
     df['group number'] = df['group'].map(group_number)
