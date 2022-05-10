@@ -56,7 +56,7 @@ def extract_all(tasks, path, save_path):
 
 if __name__ == '__main__':
     Tasks = ['courage', 'debut', 'douleur', 'piscine', 'royaume', 'serpent', 'fcat', 'flib', 'flit']
-    Path = "Data/Verbal Tasks 1-3/"
-    Save_path = "Data/Verbal Tasks features/"
+    Path = "../Data/Verbal Tasks 1-3/"
+    Save_path = "../Data/Verbal Tasks features/"
 
     extract_all(tasks=Tasks, path=Path, save_path=Save_path)
