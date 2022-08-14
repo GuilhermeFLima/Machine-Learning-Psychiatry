@@ -89,3 +89,8 @@ Todo: Grid search, cross validation, and merge classes (e.g mania & mixed mania)
   - Put old code into Recycling folder.
 
 Need to check: why grid search cross val not working for depression vs mixed depression??? Problem in the group numbers???
+
+### Aug 6
+- Starting Naive Bayes classifier.
+  - will do each type of vf separately.
+  - 
